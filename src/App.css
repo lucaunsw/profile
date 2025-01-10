@@ -3,7 +3,8 @@
   flex-direction: column;
 }
 
-span, p {
+span,
+p {
   font-size: 20px;
 }
 
@@ -11,7 +12,7 @@ span, p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   height: 100vh;
   background-color: var(--base-color);
   color: var(--text-color);
@@ -164,10 +165,10 @@ a {
   top: 5rem;
   font-size: 3rem;
   transition: transform 0.3s ease;
-  transform-origin: center; 
+  transform-origin: center;
 }
 .globe:hover {
-  transform: scale(1.33); 
+  transform: scale(1.33);
   cursor: pointer;
 }
 
@@ -177,9 +178,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 50vh;
-  max-width: 800px; 
-  margin: 0 auto;    
+  height: 65vh;
+  max-width: 800px;
+  margin: 0 auto;
   color: var(--text-color);
   font-family: "Arial", sans-serif;
   font-weight: bold;
@@ -189,8 +190,8 @@ a {
 hr {
   margin: 20px 0;
   border: none;
-  border-top: 2px solid var(--line-break-color); 
-  width: 100%; 
+  border-top: 2px solid var(--line-break-color);
+  width: 100%;
 }
 
 h2 {
@@ -227,20 +228,22 @@ h2 {
   border-radius: 50%;
   border: none;
   background-color: var(--theme-button-outer);
-  transition: background-color 0.3s ease, transform 0.3s ease; 
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .themeButton:hover {
   cursor: pointer;
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
 
-.sun, .moon {
+.sun,
+.moon {
   padding: 7px 7px;
   fill: var(--theme-button-inner);
-  transition: fill 0.3s ease; 
+  transition: fill 0.3s ease;
 }
-.sun-to-moon, .moon-to-sun {
-  transition: transform 1s ease-in-out; 
+.sun-to-moon,
+.moon-to-sun {
+  transition: transform 1s ease-in-out;
 }
 .sun-to-moon {
   transform: rotate(180deg);
