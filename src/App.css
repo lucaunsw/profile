@@ -1,6 +1,8 @@
 .App {
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 span,
@@ -21,11 +23,13 @@ p {
 
 .introduction span {
   font-weight: bold;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .greeting {
-  font-size: 3rem;
-  height: 3rem;
+  font-size: 6rem;
+  height: 5rem;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
@@ -178,7 +182,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 65vh;
+  height: 60vh;
   max-width: 800px;
   margin: 0 auto;
   color: var(--text-color);
@@ -250,4 +254,87 @@ h2 {
 }
 .moon-to-sun {
   transform: rotate(0deg);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  color: var(--text-color);
+  font-weight: bold;
+}
+.footer-content {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+}
+
+.man {
+  fill: var(--text-color);
+  margin-top: 40px;
+  filter: drop-shadow(0 0 5px white)
+    drop-shadow(0 0 10px rgb(255, 255, 255, 0.3));
+  transition: filter 0.3s ease-in-out;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.profile-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.information-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+}
+.info-heading {
+  color: var(--text-color);
+}
+.info-answer {
+  color: var(--subtext-color);
+}
+.right {
+  text-align: end;
+}
+.left {
+  text-align: start;
+}
+
+.about-container {
+  display: grid;
+  place-items: center; /* Centering both horizontally and vertically */
+  max-width: 800px;
+  margin: 0 auto; /* Centers the container */
+  gap: 2rem; /* Space between children */
+}
+.about {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 2rem; /* Adds space before the video */
+}
+
+iframe {
+  width: 100%; /* Make the iframe responsive */
+  height: 400px; /* Fixed height for iframe */
+  display: block;
+  border: none; /* Remove iframe border */
+  margin-bottom: 3rem;
 }

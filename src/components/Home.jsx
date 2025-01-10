@@ -119,6 +119,7 @@ export default function Home() {
       <div className="introduction">
         <Greeting fade={fade} currentGreeting={currentGreeting} />
         <span>I'm Luca, it's really nice to meet you</span>
+        <Profile />
         <Arrow scrollToSection={scrollToSection} />
       </div>
       <Australia />
@@ -127,6 +128,62 @@ export default function Home() {
       <Italy />
       <Maldives />
       <Games />
+      <Footer />
+    </div>
+  );
+}
+
+function Profile() {
+  return (
+    <div className="profile-container">
+      <div className="profile-content">
+        <div className="information-container">
+          <div className="profile-information right">
+            <span className="info-heading">Age</span>
+            <span className="info-answer">19</span>
+          </div>
+          <div className="profile-information right">
+            <span className="info-heading">Degree</span>
+            <span className="info-answer">Software Engineering</span>
+          </div>
+          <div className="profile-information right">
+            <span className="info-heading">Nationality</span>
+            <span className="info-answer">Vietnamese</span>
+          </div>
+          <div className="profile-information right">
+            <span className="info-heading">Favourite Colour</span>
+            <span className="info-answer">Dark Blue</span>
+          </div>
+        </div>
+        <svg
+          className="man"
+          xmlns="http://www.w3.org/2000/svg"
+          width="500"
+          height="500"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="4" r="2"></circle>
+          <path d="M15 22V9h5V7H4v2h5v13h2v-7h2v7z"></path>
+        </svg>
+        <div className="information-container">
+          <div className="profile-information left">
+            <span className="info-heading">Personality</span>
+            <span className="info-answer">INFJ</span>
+          </div>
+          <div className="profile-information left">
+            <span className="info-heading">Year of Study</span>
+            <span className="info-answer">Second year</span>
+          </div>
+          <div className="profile-information left">
+            <span className="info-heading">Hobbies</span>
+            <span className="info-answer">Gym, Gaming, Programming</span>
+          </div>
+          <div className="profile-information left">
+            <span className="info-heading">Favourite Show</span>
+            <span className="info-answer">Dragon Ball Z</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -420,5 +477,15 @@ function Maldives() {
         <img className="maldives" src={maldivesImg} />
       </div>
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer id="footer">
+      <div className="content">
+        <p>Copyright © 2025 Luca Nguyen</p>
+      </div>
+    </footer>
   );
 }
