@@ -6,6 +6,7 @@ import hollowImg from "../../public/hollow.jpg";
 import luccaImg from "../../public/lucca.jpg";
 import maldivesImg from "../../public/maldives.jpg";
 import { Link } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation";
 
 const greetings = [
   "Hello!",
@@ -118,7 +119,7 @@ export default function Home() {
       <Globe />
       <div className="introduction">
         <Greeting fade={fade} currentGreeting={currentGreeting} />
-        <span>I'm Luca, it's really nice to meet you</span>
+        <Type />
         <Profile />
         <Arrow scrollToSection={scrollToSection} />
       </div>
@@ -129,6 +130,19 @@ export default function Home() {
       <Maldives />
       <Games />
       <Footer />
+    </div>
+  );
+}
+
+function Type() {
+  return (
+    <div className="typewriter">
+      <TypeAnimation
+        sequence={["I'm Luca, it's really nice to meet you", 1000]}
+        speed={50}
+        repeat={Infinity}
+        style={{ fontSize: "2em" }}
+      />
     </div>
   );
 }
@@ -151,8 +165,8 @@ function Profile() {
             <span className="info-answer">Vietnamese</span>
           </div>
           <div className="profile-information right">
-            <span className="info-heading">Favourite Colour</span>
-            <span className="info-answer">Dark Blue</span>
+            <span className="info-heading">Favourite Movie</span>
+            <span className="info-answer">The Boy & the Heron</span>
           </div>
         </div>
         <svg

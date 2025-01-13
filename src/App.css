@@ -32,6 +32,8 @@ p {
   height: 5rem;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  margin-bottom: 60px;
+  margin-top: 30px;
 }
 
 .fade-out {
@@ -43,7 +45,6 @@ p {
 }
 
 .arrow {
-  margin-top: 20px;
   fill: var(--secondary-color);
   transition: ease 0.3s;
 }
@@ -182,13 +183,11 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60vh;
+  margin-top: 2rem;
   max-width: 800px;
-  margin: 0 auto;
   color: var(--text-color);
   font-family: "Arial", sans-serif;
   font-weight: bold;
-  gap: 40px;
 }
 
 hr {
@@ -287,6 +286,8 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 .profile-content {
   display: flex;
@@ -337,4 +338,9 @@ iframe {
   display: block;
   border: none; /* Remove iframe border */
   margin-bottom: 3rem;
+}
+
+.typewriter {
+  font-size: 0.7rem;
+  margin: 0;
 }
