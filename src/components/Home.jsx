@@ -161,7 +161,7 @@ function Profile() {
             <span className="info-answer">Software Engineering</span>
           </div>
           <div className="profile-information right">
-            <span className="info-heading">Ethnicity</span>
+            <span className="info-heading">Ethnicity </span>
             <span className="info-answer">Vietnamese</span>
           </div>
           <div className="profile-information right">
