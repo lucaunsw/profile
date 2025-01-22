@@ -16,7 +16,7 @@ export default function Extras() {
         <div>
           <h2>Tricking</h2>
           <span>
-            Although it's been a while (a couple years actually 💀) I enjoyed
+            Although it's been a while (a couple years actually 💀), I enjoyed
             training tricking a lot. You’ve probably never heard of it, but it’s
             basically a crazy mix of gymnastics, martial arts, and breakdancing.{" "}
             <a href="https://youtu.be/reMjScwSlqs" target="_blank">
@@ -55,10 +55,10 @@ function Video() {
       height="315"
       src="https://www.youtube.com/embed/reMjScwSlqs?si=GKAiDiEFi24xUiWR"
       title="YouTube video player"
-      frameborder="0"
+      frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
     ></iframe>
   );
 }

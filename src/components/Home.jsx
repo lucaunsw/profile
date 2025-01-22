@@ -497,6 +497,7 @@ function Maldives() {
 function Footer() {
   return (
     <footer id="footer">
+      <hr />
       <div className="content">
         <p>Copyright © 2025 Luca Nguyen</p>
       </div>
