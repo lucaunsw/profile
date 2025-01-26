@@ -7,6 +7,7 @@ import luccaImg from "../../public/lucca.jpg";
 import maldivesImg from "../../public/maldives.jpg";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import aeroplane from "../../public/aeroplane.svg";
 
 const greetings = [
   "Hello!",
@@ -25,17 +26,17 @@ export default function Home() {
   const [currentGreeting, setCurrentGreeting] = useState(greetings[0]);
   const [fade, setFade] = useState(true);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+  const [isPlaneVisible, setIsPlaneVisible] = useState(false);
   const [currFlag, setCurrFlag] = useState(null);
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme ? JSON.parse(savedTheme) : true;
   });
 
-  // Save theme to localStorage: called when "darkMode" state changes
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(darkMode));
   }, [darkMode]);
-  // Update theme to light/dark
+
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("darkmode");
@@ -55,8 +56,10 @@ export default function Home() {
     const handleScroll = () => {
       if (window.scrollY > 400) {
         setIsHeaderVisible(true);
+        setIsPlaneVisible(true);
       } else {
         setIsHeaderVisible(false);
+        setIsPlaneVisible(false);
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -110,6 +113,7 @@ export default function Home() {
 
   return (
     <div className="App">
+      {darkMode ? <Stars /> : ""}
       <Header
         isHeaderVisible={isHeaderVisible}
         scrollToSection={scrollToSection}
@@ -129,6 +133,10 @@ export default function Home() {
       <Italy />
       <Maldives />
       <Games />
+      <BackToTop
+        isPlaneVisible={isPlaneVisible}
+        scrollToSection={scrollToSection}
+      />
       <Footer />
     </div>
   );
@@ -205,7 +213,7 @@ function Profile() {
 function Greeting({ fade, currentGreeting }) {
   return (
     <>
-      <h1 className={`greeting ${fade ? "fade-in" : "fade-out"}`}>
+      <h1 className={`greeting ${fade ? "fade-in" : "fade-out"}`} id="greeting">
         {currentGreeting}
       </h1>
     </>
@@ -428,10 +436,7 @@ function Switzerland() {
     <div id="switzerland" className="section">
       <span>🇨🇭</span>
       <div className="content">
-        <p>
-          Fun fact, I was born in the Switzerland city, Geneva (I know it's
-          kinda ridiculous).
-        </p>
+        <p>Fun fact, I was born in the Switzerland city, Geneva.</p>
         <img className="lucca" src={luccaImg} />
       </div>
     </div>
@@ -462,22 +467,6 @@ function Italy() {
   );
 }
 
-function Games() {
-  return (
-    <div id="games" className="section">
-      <span>🏁</span>
-      <div className="content">
-        <p>I play a lot of games in my free time.</p>
-        <p>
-          I enjoy FPS games like Valorant but have recently gotten into
-          Metroidvania and Soulslike games such as Hollow Knight and God of War.
-        </p>
-        <img className="games" src={hollowImg} />
-      </div>
-    </div>
-  );
-}
-
 function Maldives() {
   return (
     <div id="maldives" className="section">
@@ -494,6 +483,37 @@ function Maldives() {
   );
 }
 
+function Games() {
+  return (
+    <div id="games" className="section">
+      <span>🏁</span>
+      <div className="content">
+        <p>I play a lot of games in my free time.</p>
+        <p>
+          I enjoy FPS games like Valorant but have recently gotten into
+          Metroidvania and Soulslike games such as Hollow Knight and God of War.
+        </p>
+        <img className="games" src={hollowImg} />
+      </div>
+    </div>
+  );
+}
+
+function BackToTop({ isPlaneVisible, scrollToSection }) {
+  function handleBackToTop() {
+    scrollToSection("top");
+  }
+
+  return (
+    <img
+      src={aeroplane}
+      alt="Aeroplane"
+      className={`aeroplane ${isPlaneVisible ? "visible" : ""}`}
+      onClick={handleBackToTop}
+    />
+  );
+}
+
 function Footer() {
   return (
     <footer id="footer">
@@ -502,5 +522,15 @@ function Footer() {
         <p>Copyright © 2025 Luca Nguyen</p>
       </div>
     </footer>
+  );
+}
+
+function Stars() {
+  return (
+    <div className="stars-container">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </div>
   );
 }
