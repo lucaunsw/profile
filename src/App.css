@@ -934,6 +934,7 @@ iframe {
 .stars-container {
   position: absolute;
   width: 100vw;
+  transform: scale(1.5);
   height: 100vh;
   overflow: hidden;
 }
