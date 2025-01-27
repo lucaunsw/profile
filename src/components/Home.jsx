@@ -36,19 +36,14 @@ export default function Home() {
 
   useEffect(() => {
     function handleResize() {
-      // Check viewport width and height; adjust the threshold as needed
       const isLargeViewport =
         window.innerWidth > 1920 || window.innerHeight > 1080;
       setShouldShowStars(!isLargeViewport);
     }
 
-    // Initial check on mount
     handleResize();
-
-    // Add resize event listener
     window.addEventListener("resize", handleResize);
 
-    // Cleanup the event listener
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
