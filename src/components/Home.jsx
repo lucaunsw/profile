@@ -32,6 +32,25 @@ export default function Home() {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme ? JSON.parse(savedTheme) : true;
   });
+  const [shouldShowStars, setShouldShowStars] = useState(true);
+
+  useEffect(() => {
+    function handleResize() {
+      // Check viewport width and height; adjust the threshold as needed
+      const isLargeViewport =
+        window.innerWidth > 1920 || window.innerHeight > 1080;
+      setShouldShowStars(!isLargeViewport);
+    }
+
+    // Initial check on mount
+    handleResize();
+
+    // Add resize event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("theme", JSON.stringify(darkMode));
@@ -113,7 +132,7 @@ export default function Home() {
 
   return (
     <div className="App">
-      {darkMode ? <Stars /> : ""}
+      {darkMode && shouldShowStars ? <Stars /> : ""}
       <Header
         isHeaderVisible={isHeaderVisible}
         scrollToSection={scrollToSection}

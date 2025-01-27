@@ -933,10 +933,10 @@ iframe {
 
 .stars-container {
   position: absolute;
-  width: 100vw;
-  transform: scale(1.5);
+  width: 200vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 0;
 }
 
 .invisible {
