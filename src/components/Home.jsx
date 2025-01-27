@@ -35,6 +35,17 @@ export default function Home() {
   const [shouldShowStars, setShouldShowStars] = useState(true);
 
   useEffect(() => {
+    const userAgent = window.navigator.userAgent;
+    const isChrome =
+      /Chrome/.test(userAgent) && /Google Inc/.test(window.navigator.vendor);
+    const isWindows = /Win/.test(userAgent);
+
+    if (isChrome && isWindows) {
+      alert("Please use Firefox to ensure emojis render!");
+    }
+  }, []);
+
+  useEffect(() => {
     function handleResize() {
       const isLargeViewport =
         window.innerWidth > 1920 || window.innerHeight > 1080;
